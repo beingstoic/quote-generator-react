@@ -17,7 +17,7 @@ componentDidMount(){
   handleChange(){
     console.log('heya!');
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+    const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
   fetch(proxyUrl+apiUrl)
     .then((response)=>response.json())
     .then((data)=>this.setState({
@@ -30,7 +30,7 @@ componentDidMount(){
     return(
       <div className="App">
         <div id="quote-box" className='quote-container'>
-          <div id='quote-text'>
+          <div id='text'>
                <i className="fas fa-quote-left fa-2x"></i>
     <span id="quote">{this.state.quoteText}</span>
           </div>
@@ -40,8 +40,8 @@ componentDidMount(){
           
           <div id = 'button-container'>
             <div className='button-icon-container'>
-              <a href='#' id='tweet-quote'><i className="fab fa-twitter"></i></a>
-              <a href='#' id='tumble-quote'><i className="fab fa-tumblr"></i></a>
+              <a href="twitter.com/intent/tweet" id='tweet-quote'><i className="fab fa-twitter"></i></a>
+              <a href="twitter.com/intent/tweet" id='tumble-quote'><i className="fab fa-tumblr"></i></a>
             </div>
            
             <button id='new-quote' onClick={()=>{this.handleChange()}}>New Quote</button>
